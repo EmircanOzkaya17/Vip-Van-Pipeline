@@ -1,0 +1,29 @@
+# --- Temel ---
+numpy
+# --show / --pick-line pencereleri icin GUI destekli OpenCV gerekir
+# (opencv-python-headless pencere acamaz).
+# Plaka zinciri (dedektor + OCR) de YALNIZCA OpenCV DNN ile calisir;
+# OpenCV 4.8+ ve 5.x ile test edildi.
+opencv-python>=4.8
+python-dotenv
+
+# --- Arac tespiti + BoT-SORT takip (YOLO11 icin >= 8.3.0) ---
+ultralytics>=8.3.0
+
+# --- OpenCLIP zero-shot siniflandirma ---
+torch
+torchvision
+open_clip_torch
+Pillow
+
+# --- Plaka tespiti + OCR ---
+# Ek paket GEREKMEZ: modeller models/ klasorunde hazir gelir ve OpenCV ile
+# calisir. Asagidakiler yalnizca ISTEGE BAGLI eski / ek yollar icindir:
+#
+#   onnxruntime yolu (PLATE_DETECTOR_BACKEND=onnxruntime):
+#       open-image-models[onnx]
+#   PaddleOCR ikinci motor (PLATE_OCR_ENGINES=fastplate,paddle):
+#       paddlepaddle
+#       paddleocr
+#   Modelleri yeniden uretmek (tools/prepare_plate_models.py):
+#       onnx
