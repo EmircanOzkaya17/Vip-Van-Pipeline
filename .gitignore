@@ -1,0 +1,94 @@
+# =============================================================================
+# vip_van_pipeline - .gitignore
+# =============================================================================
+# NOT: models/ altindaki .onnx dosyalari repoya dahildir (kucuk boyutlu,
+#      projenin calismasi icin gerekli). Bkz. README -> "Modeller".
+
+# -----------------------------------------------------------------------------
+# Giris videolari ve islenmis ciktilar
+# -----------------------------------------------------------------------------
+# Klasorlerin kendisi .gitkeep ile korunur, icerikleri repoya gitmez.
+assets/*
+!assets/.gitkeep
+islenmis/*
+!islenmis/.gitkeep
+
+# -----------------------------------------------------------------------------
+# Ortam degiskenleri / gizli bilgiler
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!example.env
+
+# -----------------------------------------------------------------------------
+# Python sanal ortamlari
+# -----------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# -----------------------------------------------------------------------------
+# Python derleme / onbellek ciktilari
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# -----------------------------------------------------------------------------
+# Test / kapsam / tip denetimi onbellekleri
+# -----------------------------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# -----------------------------------------------------------------------------
+# Indirilebilir buyuk model agirliklari
+# -----------------------------------------------------------------------------
+# Ultralytics, YOLO11 agirliklarini ilk calistirmada otomatik indirir.
+yolo*.pt
+*.pt
+*.pth
+# Ultralytics calisma ciktilari
+runs/
+
+# PaddleOCR / PaddleX model onbellegi (PADDLEX_CACHE_HOME proje icindeyse)
+paddlex_cache/
+.paddlex/
+
+# -----------------------------------------------------------------------------
+# Hata ayiklama ve canli yayin ciktilari
+# -----------------------------------------------------------------------------
+# --debug-plates ile yazilan plaka kesitleri
+plaka_debug/
+# RTSP / kamera kaynaklarinda olusan cikti klasoru (OUTPUT_STREAM_DIR_NAME)
+vip_van_kayitlari/
+*.log
+
+# -----------------------------------------------------------------------------
+# IDE / editor
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# -----------------------------------------------------------------------------
+# Isletim sistemi
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
